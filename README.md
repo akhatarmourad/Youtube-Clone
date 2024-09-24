@@ -28,22 +28,34 @@ This is a feature-rich React web application that mimics the core functionalitie
 - **Explore Channels:** Users can browse through channels and view details such as recent uploads and playlists.
 - **Browse Categories:** Videos are organized into categories, making it easier for users to explore content by interest.
 
-
 ## Demo
-
-You can show the main interface with the search bar, categories, and a video being played.
 
 ![Project Demo](./public/Demo.png)
 
-Highlight the Material UI components like buttons, cards, or the layout used in your app.
+Integrate Mateirla UI components to develop a seamless UI
 
 ![Material UI](./public/Material-UI.png)
 
-Show a screenshot where video data fetched from RapidAPI is displayed (e.g., a list of videos or video details).
+Use of RapidAPI to fetch Youtube Videos & Channels Details
 
 ![Rapid API](./public/RapidAPI.png)
 
 ![Rapid API Client](./public/RapidAPI-Client.png)
+
+Deploy the project using Netlify services
+
+![Netlify](./public/Netlify.png)
+
+
+## Build the Project
+
+I built the project using the following command
+
+```bash
+npm run build
+```
+
+This command generates a build folder containing optimized static files (HTML, CSS, and JavaScript) for production. The reason for building the project is to ensure that the application is ready for deployment with improved performance, smaller file sizes, and faster load times. The build process removes unnecessary development code, providing an efficient and optimized version of the app for end users.
 
 ## Usage
 

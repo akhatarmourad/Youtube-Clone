@@ -14,7 +14,7 @@ export default function VideoCard({ video }) {
             <CardMedia
                 component="img"
                 image={video.snippet.thumbnails ? video.snippet.thumbnails.high.url : demoThumbnailUrl}
-                alt={video.snippet?.titl}
+                alt={video.snippet?.title}
                 sx={{width: {lg: "280px", md: "320px", sm: "350px", xs: "100%"}}}
             />
         </Link>
@@ -31,7 +31,7 @@ export default function VideoCard({ video }) {
                     <CheckCircle sx={{ color: "#888", ml: 0.65, fontSize: "1.2rem" }} />
                 </Typography>
                 <Typography variant="body2" sx={{ color: '#555' }}>
-                    {video.snippet?.description.slice(0, 30)}...
+                    {video.snippet?.description.slice(0, 30) || "No Description is avaiblable"}...
                 </Typography>
           </Link>
         </CardContent>
