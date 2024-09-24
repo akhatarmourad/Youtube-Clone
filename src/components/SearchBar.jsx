@@ -4,8 +4,21 @@ import { Paper, IconButton } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearchBar() {
+
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(query) {
+        navigate(`/search/${query}`);
+        setQuery('');
+    }
+  }
+  
   return (
     <Paper
+        onSubmit={handleSubmit}
         component="form"
         sx={{
             backgroundColor: '#222',
@@ -21,7 +34,8 @@ export default function SearchBar() {
             placeholder="Search..."
             className="search-bar"
             style={{backgroundColor: "#222"}} 
-            value=""
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
         />
         <IconButton type="submit" sx={{p: '10px', color: 'red'}}>
             <SearchIcon />
