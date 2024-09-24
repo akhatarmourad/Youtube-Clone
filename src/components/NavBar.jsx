@@ -11,7 +11,7 @@ export default function NavBar() {
         sx={{position: 'sticky', top: 0, backgroundColor: "#111", justifyContent: "space-between"}}
     >
         <Link to={'/'} style={{display: 'flex', alignItems: 'center'}}>
-            <img src="youtube.svg" alt="Youtube Brand" height={40} />
+            <img src="./youtube.svg" alt="Youtube Brand" height={40} />
         </Link>
         <SearchBar />
     </Stack>

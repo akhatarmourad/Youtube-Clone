@@ -4,7 +4,7 @@ import { VideoCard, ChannelCard } from "./index";
 
 export default function Videos({ videos }) {
   return (
-    <Stack direction="row" flexWrap="wrap" justifuContent="start" gap={2}>
+    <Stack direction="row" flexWrap="wrap" gap={2}>
       {
         videos.map((item, index) => (
           <Box key={index}>

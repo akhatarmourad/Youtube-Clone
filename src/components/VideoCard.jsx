@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 export default function VideoCard({ video }) {
   return (
     // Make the card dark
-    <Card sx={{ width: {md: "320px", xs: "100%"}, backgroundColor: "#222", color: "white", borderRadius: "8px" }}>
+    
+    <Card sx={{ width: {lg: "280px", md: "320px", xs: "100%"}, backgroundColor: "#222", color: "white", borderRadius: "8px" }}>
       <CardActionArea>
         <Link to={video.id.videoId ? `/videos/${video.id.videoId}` : demoVideoUrl}>
             <CardMedia
@@ -20,7 +21,7 @@ export default function VideoCard({ video }) {
         <CardContent>
             <Link to={video.id.videoId ? `/videos/${video.id.videoId}` : demoVideoUrl}>
                 <Typography gutterBottom variant="h5" component="div" sx={{ color: "white"}}>
-                    {video.snippet?.title.slice(0, 20) || demoVideoTitle.slice(0,20)}...
+                    {video.snippet?.title.slice(0, 15) || demoVideoTitle.slice(0,15)}...
                 </Typography>
             </Link>
 
