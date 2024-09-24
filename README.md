@@ -46,6 +46,8 @@ Deploy the project using Netlify services
 
 ![Netlify](./public/Netlify.png)
 
+![Netlify](./public/Netlify-Deployment.png)
+
 
 ## Build the Project
 
