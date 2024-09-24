@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Stack, Box, Typography } from "@mui/material";
 import SideBar from "./SideBar";
 import Videos from "./Videos";
@@ -8,11 +7,16 @@ import { fetchFromAPI } from "../utils/FetchFromAPI";
 export default function Feed() {
 
   const [selectedCategory, setSelectedCategory] = useState("New");
+  const [videos, setVideos] = useState([]);
 
   // Load the data from the API
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory === "New" ? "AI and Data Projects" : selectedCategory}`)
+        .then((data) => setVideos(data.items))
+        .catch((error) => console.log(error));
   }, [selectedCategory]);
+
+  console.log(videos);
 
   return (
     <Stack sx={{flexDirection: {sm: "column", md: "row"}}}>
@@ -39,10 +43,10 @@ export default function Feed() {
                 mb={2}
                 sx={{color: "white"}}
             >
-                Latest<span style={{color: "#EC1503"}}> Videos</span>
+                {selectedCategory}<span style={{color: "#EC1503"}}> Videos</span>
             </Typography>
 
-            <Videos />
+            <Videos videos={videos}/>
         </Box>
     </Stack>
   )
