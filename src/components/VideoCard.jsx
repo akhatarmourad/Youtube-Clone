@@ -8,14 +8,14 @@ export default function VideoCard({ video }) {
   return (
     // Make the card dark
     
-    <Card sx={{ width: {lg: "280px", md: "320px", xs: "100%"}, backgroundColor: "#222", color: "white", borderRadius: "8px" }}>
+    <Card sx={{ width: {lg: "280px", md: "320px", sm: "350px", xs: "100%"}, backgroundColor: "#222", color: "white", borderRadius: "8px" }}>
       <CardActionArea>
         <Link to={video.id.videoId ? `/video/${video.id.videoId}` : demoVideoUrl}>
             <CardMedia
                 component="img"
-                height="140"
                 image={video.snippet.thumbnails ? video.snippet.thumbnails.high.url : demoThumbnailUrl}
-                alt="green iguana"
+                alt={video.snippet?.titl}
+                sx={{width: {lg: "280px", md: "320px", sm: "350px", xs: "100%"}}}
             />
         </Link>
         <CardContent>

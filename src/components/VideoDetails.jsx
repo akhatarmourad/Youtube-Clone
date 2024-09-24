@@ -10,12 +10,18 @@ import { fetchFromAPI } from "../utils/FetchFromAPI";
 export default function VideoDetails() {
 
   const [videoDetails, setVideoDetails] = useState(null);
+  const [videos, setVideos] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
      .then((data) => setVideoDetails(data.items[0]))
      .catch((error) => console.log(error));
+
+    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
+      .then((data) => setVideos(data.items))
+      .catch((error) => console.log(error));
+
   }, [id]);
 
   // Check if Data is Loaded
@@ -26,6 +32,7 @@ export default function VideoDetails() {
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row"}}>
+        {/* Video Details */}
         <Box flex={1}>
           <Box sx={{ width: "100%", position: "sticky", top: "86px"}}>
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} controls className="react-player" />
@@ -45,6 +52,12 @@ export default function VideoDetails() {
               </Stack>
             </Stack>
           </Box>
+        </Box>
+
+        {/* Related Videos */}
+        <Box px={2} py={{xs: 5, md: 1}} justifyContent="center" alignItems="center">
+          <Typography color="#444" variant="h5" sx={{mb: 2}}>Related Videos</Typography>
+          <Videos videos={videos} direction="column" />
         </Box>
       </Stack>
     </Box>

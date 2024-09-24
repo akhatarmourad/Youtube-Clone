@@ -8,6 +8,7 @@ export default function NavBar() {
         direction="row"
         p={2}
         alignItems={"center"}
+        zIndex={10}
         sx={{position: 'sticky', top: 0, backgroundColor: "#111", justifyContent: "space-between"}}
     >
         <Link to={'/'} style={{display: 'flex', alignItems: 'center'}}>

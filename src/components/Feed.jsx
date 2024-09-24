@@ -46,7 +46,7 @@ export default function Feed() {
                 {selectedCategory}<span style={{color: "#EC1503"}}> Videos</span>
             </Typography>
 
-            <Videos videos={videos}/>
+            <Videos videos={videos} direction="row" />
         </Box>
     </Stack>
   )
