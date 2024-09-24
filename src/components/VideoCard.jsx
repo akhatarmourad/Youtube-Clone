@@ -10,7 +10,7 @@ export default function VideoCard({ video }) {
     
     <Card sx={{ width: {lg: "280px", md: "320px", xs: "100%"}, backgroundColor: "#222", color: "white", borderRadius: "8px" }}>
       <CardActionArea>
-        <Link to={video.id.videoId ? `/videos/${video.id.videoId}` : demoVideoUrl}>
+        <Link to={video.id.videoId ? `/video/${video.id.videoId}` : demoVideoUrl}>
             <CardMedia
                 component="img"
                 height="140"
@@ -19,7 +19,7 @@ export default function VideoCard({ video }) {
             />
         </Link>
         <CardContent>
-            <Link to={video.id.videoId ? `/videos/${video.id.videoId}` : demoVideoUrl}>
+            <Link to={video.id.videoId ? `/video/${video.id.videoId}` : demoVideoUrl}>
                 <Typography gutterBottom variant="h5" component="div" sx={{ color: "white"}}>
                     {video.snippet?.title.slice(0, 15) || demoVideoTitle.slice(0,15)}...
                 </Typography>

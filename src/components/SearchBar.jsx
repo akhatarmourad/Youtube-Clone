@@ -33,7 +33,7 @@ export default function SearchBar() {
             type="text"
             placeholder="Search..."
             className="search-bar"
-            style={{backgroundColor: "#222"}} 
+            style={{backgroundColor: "#222", color: "white"}} 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
         />
